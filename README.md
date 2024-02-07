@@ -18,3 +18,7 @@ Python class to check Sesame criteria for HVSR measures:
 
 ## Dependencies
 **numpy** is the only current dependence needed.
+
+## Disclaimer
+The code in this repository has not been thoroughly tested!\
+If you find bugs or errors during use, please report them.
