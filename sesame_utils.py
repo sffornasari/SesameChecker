@@ -23,7 +23,6 @@ def geopsy_hv_reader(hvfile, logfile=None, lw=None):
             f.append(fi)
             hv.append(avgi)
             sigmaA.append(highi/avgi)
-            # sigmaA = np.sqrt(np.divide(high, low))
     if logfile != None:
         with open(logfile, 'r') as f:
             lines = f.read().splitlines()
