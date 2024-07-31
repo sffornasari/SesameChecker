@@ -16,8 +16,13 @@ def geopsy_hv_reader(hvfile, logfile=None, lw=None):
             if "Number of windows =" in line:
                 nw = int(line.split('=')[1].strip())
             elif "f0 from windows" in line:
-                fa, fd, fm = line.split()[-3:]
-                sigmaf = float(fm)/float(fa)
+                fm, fl, fh = line.split()[-3:]
+                sig = float(fm)/float(fl)
+                m = np.log(fm)
+                s = np.log(sig)
+                # Compute the standard deviation of a log-normal distribution
+                varf = np.exp(2*m+s**2)*(np.exp(s**2)-1)
+                sigmaf = np.sqrt(varf)
         else:
             fi, avgi, lowi, highi = [float(x) for x in line.split()]
             f.append(fi)
