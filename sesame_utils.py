@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 def geopsy_hv_reader(hvfile, logfile=None, lw=None):
     """Function to read the parameters from geopsy .hv and .log files.
     The .log file can be omitted if the windows length is passed directly.
